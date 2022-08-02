@@ -18,7 +18,10 @@ export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
         {options.map((option, index) => {
           return (
             <ButtonListItem key={index}>
-              <StatisticBtn type="button" onClick={onLeaveFeedback}>
+              <StatisticBtn
+                type="button"
+                onClick={() => onLeaveFeedback(option)}
+              >
                 {first(option)}
               </StatisticBtn>
             </ButtonListItem>

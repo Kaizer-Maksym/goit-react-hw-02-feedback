@@ -11,17 +11,10 @@ export class App extends Component {
     bad: 0,
   };
 
-  heandlFeedback = e => {
-    const textContent = e.target.textContent;
-    if (textContent === 'Good') {
-      this.setState(prevState => ({ good: prevState.good + 1 }));
-    }
-    if (textContent === 'Neutral') {
-      this.setState(prevState => ({ neutral: prevState.neutral + 1 }));
-    }
-    if (textContent === 'Bad') {
-      this.setState(prevState => ({ bad: prevState.bad + 1 }));
-    }
+  heandlFeedback = key => {
+    this.setState(prevState => ({
+      [key]: prevState[key] + 1,
+    }));
   };
 
   countTotalFeedback = () => {
